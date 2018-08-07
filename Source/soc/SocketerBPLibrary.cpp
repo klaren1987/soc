@@ -136,6 +136,7 @@ bool USocketerBPLibrary::GetMessage(USocket* Connection, FString &Message)
 		BinaryData.Add(0);
 		// Convert it to an fstring and set the passed in message parameter
 		Message = FString(ANSI_TO_TCHAR(reinterpret_cast<const char*>(BinaryData.GetData())));
+		
 		return true;
 	}
 
@@ -189,9 +190,8 @@ bool USocketerBPLibrary::CloseConnection(USocket * Connection)
 
 bool USocketerBPLibrary::SendCPMsg202(USocket* Connection)
 {
-	CPMsg202 _replyMsg202;
-
 	
+	CPMsg202 _replyMsg202;	
 	_replyMsg202.msgsrcID = 0X55;
 	_replyMsg202.msgdstID = 0x80;
 	_replyMsg202.nomAbonnetwork =5 ;
@@ -220,7 +220,7 @@ bool USocketerBPLibrary::SendCPMsg202(USocket* Connection)
 
 	// Send the message
 
-	bool successful = MySocket->Send((uint8*)TCHAR_TO_UTF8(serializedChar), size, sent);
+	bool successful = MySocket->Send((uint8*)(serializedChar), size, sent);
 
 	// And check if there was an error
 	if (!successful)
@@ -234,3 +234,4 @@ bool USocketerBPLibrary::SendCPMsg202(USocket* Connection)
 	}
 
 }
+

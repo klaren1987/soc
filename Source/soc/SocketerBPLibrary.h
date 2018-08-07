@@ -55,14 +55,13 @@ class USocketerBPLibrary : public UBlueprintFunctionLibrary
 		static bool CloseConnection(USocket* Connection);
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send CPMsg202", Keywords = "CPMsg202"), Category = "Networking|Socketer")
 		static bool SendCPMsg202(USocket* Connection);
-
+	
+	
 };
 USTRUCT(BlueprintType)
 struct FFlowerStruct
 {
-	GENERATED_BODY()
-
-	
+	GENERATED_BODY()	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flower Struct")
 		FLinearColor Color;
