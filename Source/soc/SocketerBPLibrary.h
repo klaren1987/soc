@@ -53,8 +53,7 @@ class USocketerBPLibrary : public UBlueprintFunctionLibrary
 		static bool HasPendingData(USocket* Connection);
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Close connection to TCP server", Keywords = "Socketer disconnect close tcpclose tcp tcpdisconnect socketerdisconnect"), Category = "Networking|Socketer")
 		static bool CloseConnection(USocket* Connection);
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send CPMsg202", Keywords = "CPMsg202"), Category = "Networking|Socketer")
-		static bool SendCPMsg202(USocket* Connection);
+	
 	
 	
 };
