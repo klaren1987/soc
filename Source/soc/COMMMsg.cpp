@@ -4,13 +4,6 @@
 #include<stdint.h>
 
 
-COMMMsg::COMMMsg( int type, int size, int src ) :
-  msgsrcID((uint8_t)(src)),
-  msgsize((uint16_t)(size)),
-  msgtime(GLTime()),
-  msgtype((uint16_t)(type))
-{
-}
 
 inline
 int64_t COMMMsg::time( const void* pMsg )

@@ -7,7 +7,8 @@
 #include "Runtime/Networking/Public/Networking.h"
 #include "Runtime/Sockets/Public/Sockets.h"
 #include "Runtime/Sockets/Public/SocketSubsystem.h"
-#include "protocol/CPMsg.h"
+#include "CPMsg.h"
+#include "COMMMsg.h"
 #include "SocketerBPLibrary.generated.h"
 
 /*

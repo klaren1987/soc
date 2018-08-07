@@ -31,7 +31,11 @@ struct COMMMsg
   \param size Size of message.
   \param src Source of message.
   */
-  COMMMsg( int type, int size, int src = 0 );
+	COMMMsg(int type, int size, int src = 0) :
+		msgsrcID((uint8_t)(src)),
+		msgsize((uint16_t)(size)),
+		msgtime(GLTime()),
+		msgtype((uint16_t)(type)) {};
 
   /*!
   \return Creation time of the message.  */

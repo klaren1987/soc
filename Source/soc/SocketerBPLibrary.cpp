@@ -189,8 +189,9 @@ bool USocketerBPLibrary::CloseConnection(USocket * Connection)
 
 bool USocketerBPLibrary::SendCPMsg202(USocket* Connection)
 {
-
 	CPMsg202 _replyMsg202;
+
+	
 	_replyMsg202.msgsrcID = 0X55;
 	_replyMsg202.msgdstID = 0x80;
 	_replyMsg202.nomAbonnetwork =5 ;
@@ -231,4 +232,5 @@ bool USocketerBPLibrary::SendCPMsg202(USocket* Connection)
 	{
 		return true;
 	}
+
 }
