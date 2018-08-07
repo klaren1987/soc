@@ -7,6 +7,7 @@
 #include "Runtime/Networking/Public/Networking.h"
 #include "Runtime/Sockets/Public/Sockets.h"
 #include "Runtime/Sockets/Public/SocketSubsystem.h"
+#include "protocol/CPMsg.h"
 #include "SocketerBPLibrary.generated.h"
 
 /*
@@ -26,6 +27,10 @@
 *	For more info on custom blueprint nodes visit documentation:
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
+
+
+
+
 UCLASS()
 class USocketerBPLibrary : public UBlueprintFunctionLibrary
 {
@@ -39,13 +44,28 @@ class USocketerBPLibrary : public UBlueprintFunctionLibrary
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send message to the server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
 		static bool SendMessage(USocket* Connection, FString Message);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send message sr to the server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
+		static bool SendTCHARMessage(USocket* Connection);
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get buffer (converted to FText) from server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
 		static bool GetMessage(USocket* Connection, FString &Message);
-
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "HasPendingData", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
 		static bool HasPendingData(USocket* Connection);
-
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Close connection to TCP server", Keywords = "Socketer disconnect close tcpclose tcp tcpdisconnect socketerdisconnect"), Category = "Networking|Socketer")
 		static bool CloseConnection(USocket* Connection);
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send CPMsg202", Keywords = "CPMsg202"), Category = "Networking|Socketer")
+		static bool SendCPMsg202(USocket* Connection);
 
+};
+USTRUCT(BlueprintType)
+struct FFlowerStruct
+{
+	GENERATED_BODY()
+
+	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flower Struct")
+		FLinearColor Color;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flower Struct")
+		FVector Scale3D;
 };
