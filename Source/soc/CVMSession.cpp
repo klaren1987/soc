@@ -81,7 +81,7 @@ bool ACVMSession::processMSG(USocket* Connection)
 
 	///////
 	
-	UE_LOG(LogTemp, Warning, TEXT(FString::FromInt(pMsg->msgtype)));
+	//UE_LOG(LogTemp, Warning, TEXT(FString::FromInt(pMsg->msgtype)));
 	
 	switch (pMsg->msgtype) {
 
