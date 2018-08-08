@@ -1,11 +1,9 @@
-/*! \file GLTime.cpp
-\brief Implementation of GLTime class.
-*/
 
+#include "GLTime.h"
 // _OS_INDEPENDENT_
 #include "COcxx.h"
 #include "CODefine.h"
-#include "GLTime.h"
+
 //#include "OSFunc.h"
 #include <time.h>
 #include <assert.h>
@@ -151,7 +149,7 @@ void GLTime::init( void )
 {
   _timeb  st;
   _ftime(&st);
-  unsigned long	beg = OSticksToMs(clock());
+  unsigned long	beg = 123;// OSticksToMs(clock());
 
   s_processStartup = st.time;
   s_processStartup *= 1000;

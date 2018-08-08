@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "SocketerBPLibrary.h"
+#include "CPMsg.h"
+#include "COMMMsg.h"
 #include "CVMSession.generated.h"
 
 
@@ -19,9 +21,10 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send CPMsg202", Keywords = "CPMsg202"), Category = "TCP Messages for CVM")
 		static bool SendCPMsg202(USocket* Connection);
 	UFUNCTION(BlueprintCallable, Category = "TCP Messages for CVM")
-		void test();
+		bool processMSG(USocket* Connection);
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_1_Come();
+	/*
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_2_Come();
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
@@ -184,6 +187,7 @@ public:
 		void Message_81_Come();
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_82_Come();
+*/
 /*	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_1_Come();
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")

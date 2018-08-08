@@ -7,11 +7,12 @@
 
 #include "GLGeometry.h"
 
-
+#include"COTypes.h"
+#include<assert.h>
 #undef _OSF_SOURCE
 #include <math.h>
 
-const double PI = 3.1415926535897932384626433832795;
+//const double PI = 3.1415926535897932384626433832795;
 
 /*********************************************************************
 

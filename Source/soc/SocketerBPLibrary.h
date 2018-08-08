@@ -39,14 +39,10 @@ class USocketerBPLibrary : public UBlueprintFunctionLibrary
 
 		UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "Socketer sample test testing"), Category = "SocketerTesting")
 		static float SocketerSampleFunction(float Param);
-
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Connect to a TCP server", Keywords = "Socketer connect tcp tcpconnect socketerconnect"), Category = "Networking|Socketer")
 		static USocket* Connect(FString IP, int32 port, bool &success);
-
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send message to the server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
-		static bool SendMessage(USocket* Connection, FString Message);
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Send message sr to the server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
-		static bool SendTCHARMessage(USocket* Connection);
+		static bool SendMessage(USocket* Connection, FString Message);	
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get buffer (converted to FText) from server", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")
 		static bool GetMessage(USocket* Connection, FString &Message);
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "HasPendingData", Keywords = "Socketer send message tcpsend tcp tcpdisconnect socketersend"), Category = "Networking|Socketer")

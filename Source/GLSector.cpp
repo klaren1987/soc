@@ -4,7 +4,7 @@
 
 // _OS_INDEPENDENT_
 #include "GLSector.h"
-
+#include<assert.h>
 #undef _OSF_SOURCE
 #include <math.h>
 

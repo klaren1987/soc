@@ -84,10 +84,6 @@ bool USocketerBPLibrary::SendMessage(USocket * Connection, FString Message)
 		return true;
 	}
 }
-bool USocketerBPLibrary::SendTCHARMessage(USocket * Connection)
-{	
-	return true;	
-}
 
 bool USocketerBPLibrary::GetMessage(USocket* Connection, FString &Message)
 {
