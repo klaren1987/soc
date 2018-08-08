@@ -53,14 +53,3 @@ class USocketerBPLibrary : public UBlueprintFunctionLibrary
 	
 	
 };
-USTRUCT(BlueprintType)
-struct FFlowerStruct
-{
-	GENERATED_BODY()	
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flower Struct")
-		FLinearColor Color;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flower Struct")
-		FVector Scale3D;
-};

@@ -25,7 +25,7 @@ void ACVMSession::Tick(float DeltaTime)
 
 }
 
-bool ACVMSession::processMSG(USocket* Connection)
+bool ACVMSession::processMSG(USocket* Connection, FString &messagecome)
 {
 	COMMMsg* pMsg;
 	if (!IsValid(Connection))
@@ -80,13 +80,18 @@ bool ACVMSession::processMSG(USocket* Connection)
 
 
 	///////
-	
-	//UE_LOG(LogTemp, Warning, TEXT(FString::FromInt(pMsg->msgtype)));
+	messagecome=FString::FromInt(pMsg->msgtype);
+	//UE_LOG(LogTemp, Warning, TEXT(c));
 	
 	switch (pMsg->msgtype) {
 
 	case CPMsg108::TYPE: {
-		Message_108_Come();
+		FBPCPMsg108 temp;
+		temp.Cfolor = 2;
+		temp.Scale3D = 3;
+		temp.NumAb = 1;
+		temp.NumZRK = 4;
+		Message_108_Come(temp);
 	}
 	case CPMsg112::TYPE: {
 		Message_112_Come();
