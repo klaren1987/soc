@@ -7,6 +7,7 @@
 #include "SocketerBPLibrary.h"
 #include "CPMsg.h"
 #include "COMMMsg.h"
+#include "CPGFMsg.h"
 #include "CVMSession.generated.h"
 
 
@@ -24,6 +25,14 @@ public:
 		bool processMSG(USocket* Connection);
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_1_Come();
+	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
+		void Message_82_Come();
+	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
+		void Message_112_Come();
+	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
+		void Message_123_Come();
+	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
+		void Message_108_Come();
 	/*
 	UFUNCTION(BlueprintImplementableEvent, Category = "TCP Messages for CVM")
 		void Message_2_Come();

@@ -25,20 +25,22 @@ void ACVMSession::Tick(float DeltaTime)
 
 }
 
-bool ACVMSession::processMSG(USocket* Connection);
+bool ACVMSession::processMSG(USocket* Connection)
 {
 	COMMMsg* pMsg;
 	if (!IsValid(Connection))
 	{
+		UE_LOG(LogTemp, Warning, TEXT("IsValid(Connection)!"));
 		return false;
 	}
-
+	
 	// Set an FSocket pointer to the socket inside of the passed in USocket
 	FSocket* MySocket = Connection->GetSocket();
 
 	// Check if it is not a null pointer
 	if (MySocket == nullptr)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("MySocket == nullptr!"));
 		return false;
 	}
 
@@ -70,8 +72,8 @@ bool ACVMSession::processMSG(USocket* Connection);
 	{
 		// Be sure to \0 terminate the array
 		
-		// Convert it to an fstring and set the passed in message parameter
-		pMsg=reinterpret_cast<COMMMsg*>(BinaryData.GetData()));
+		
+		pMsg=reinterpret_cast<COMMMsg*>(BinaryData.GetData());
 
 		
 	}
@@ -79,21 +81,20 @@ bool ACVMSession::processMSG(USocket* Connection);
 
 	///////
 	
-
+	UE_LOG(LogTemp, Warning, TEXT(FString::FromInt(pMsg->msgtype)));
 	
 	switch (pMsg->msgtype) {
-	case CPMsg82::TYPE: {
 
-	}break;
+	case CPMsg108::TYPE: {
+		Message_108_Come();
+	}
 	case CPMsg112::TYPE: {
-
-	}break;
+		Message_112_Come();
+	}
 	case CPMsg123::TYPE: {
+		Message_123_Come();
+	}
 
-	}break;
-	default: {
-
-	}break;
 	}
 	return true;
 }
