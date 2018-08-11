@@ -895,6 +895,17 @@ struct  FBPCPMsg158
 
 };
 
+
+UENUM(BlueprintType)
+enum class Reportcf :uint8
+{
+	REPORT_AIR_OBJ_TO UMETA(DisplayName = "REPORT_AIR_OBJ_TO"),
+
+	REPORT_AIR_OBJ_FROM UMETA(DisplayName = "REPORT_AIR_OBJ_FROM"),
+
+	REPORT_INDEPENDENT UMETA(DisplayName = "REPORT_INDEPENDENT")
+};
+
 USTRUCT(BlueprintType)
 struct  FBPCPMsg108
 {
@@ -909,17 +920,13 @@ struct  FBPCPMsg108
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TCP Messages for CVM")
 		int numAirObjAb;	
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TCP Messages for CVM")
-		int pr_info;		
-		enum
-		{
-			REPORT_AIR_OBJ_TO = 0x02,
+		int pr_info;
 			
-			REPORT_AIR_OBJ_FROM = 0x08,
-			
-			REPORT_INDEPENDENT = 0x10
-		};		
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TCP Messages for CVM")
-		int code;	
+		int code;
+	
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TCP Messages for CVM")
+			TEnumAsByte<Reportcf> test;
 		enum
 		{
 			
